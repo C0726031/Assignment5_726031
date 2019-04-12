@@ -5,39 +5,44 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Assignment5_726031
-{//Harpreet Kaur
-    class Program2
+{  //Harpreet Kaur
+    class Program
     {
-
-
-        string[] Letters = new string[26] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
-
-        public static void Main()
+        static void Main(string[] args)
         {
-            Program2 orange = new Program2();
-            Console.WriteLine(orange.Gematria("universe"));
-        }
+            Program a = new Program();
+            Console.WriteLine("the longest word is :");
+            Console.WriteLine(a.MyFunctionA("Ada Lovelace wrote the first algorithm designed processing by an Analytical Engine.")); }
 
-        public int Gematria(string word)
+        public MyFunctionA(string input)
         {
-            int GematriaValue = 0;
-            for (int i = 0; i < word.Length; i++)
-            { GematriaValue += LetterValue(word[i].ToString()); }
+            //Write a C# program to find the longest word in a string.
+            string[] words = input.Split('');
 
-            return GematriaValue;
-        }
-        public int LetterValue(string letter)
-        {
-            int x = 0;
-            while (Letters[x] != letter)
+            int wordArrayLength = words.Length;
+            int[] wordsLength = new int[wordArrayLength];
+
+            foreach (var word in words)
             {
-                if (Letters[x++] == letter) return x;
+                //TODO
             }
-            return -1;
+            //loop post condition: we now have array wordsLength which
+            //contains the lengths of each word
+
+            string currentWord = words[0];
+            string nextWord;
+
+            for (int y = 0; y < words.Length - 1; y++)
+            {
+                currentWord = words[y];
+                nextWord = words[y + 1];
+                //TODO: Use an IF Statement to make sure that variable longestWord
+                // is always set to the Longest Word in th input string
+            }
         }
     }
-        }
-    
-
+}
+        
+        
     
 
