@@ -8,35 +8,36 @@ namespace Assignment5_726031
 {//Harpreet Kaur
     class Program2
     {
-        static void Main(string[] args)
+
+
+        string[] Letters = new string[26] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+
+        public static void Main()
         {
-            string[] Letters = new string[26] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+            Program2 orange = new Program2();
+            Console.WriteLine(orange.Gematria("universe"));
+        }
 
-            public static void Main()
-            {
-                Program2 orange = new Program2();
-                Console.WriteLine(orange.Gematria("universe"));
-            }
+        public int Gematria(string word)
+        {
+            int GematriaValue = 0;
+            for (int i = 0; i < word.Length; i++)
+            { GematriaValue += LetterValue(word[i].ToString()); }
 
-            public int Gematria(string word)
+            return GematriaValue;
+        }
+        public int LetterValue(string letter)
+        {
+            int x = 0;
+            while (Letters[x] != letter)
             {
-                int GematriaValue = 0;
-                for (int i = 0; i < word.Length; i++)
-                { GematriaValue += LetterValue(word[i].ToString()); }
-
-                return GematriaValue;
+                if (Letters[x++] == letter) return x;
             }
-            public int LetterValue(string letter)
-            {
-                int x = 0;
-                while (Letters[x] != letter)
-                {
-                    if (Letters[x++] == letter) return x;
-                }
-                return -1;
-            }
+            return -1;
         }
     }
-}
+        }
+    
+
     
 
